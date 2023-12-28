@@ -12,7 +12,8 @@ public class HeapSort {
         System.out.println(Arrays.toString(arr));
 
 //        최초 힙구성 이후에 최대힙과 마지막 노드와 change해 가면서 heapify수행 // 힙정렬
-        for(int i = arr.length-1; i>=0; i--){
+        for(int i = n-1; i>=0; i--){
+//            0번째와 마지막번째 자리 change
             int temp = arr[i];
             arr[i] = arr[0];
             arr[0] = temp;
@@ -39,18 +40,18 @@ public class HeapSort {
         }
 
 
-
 //        if (arr.length > 2 * root + 1 && arr[root] < arr[2 * root + 1] && arr[2 * root + 1]>arr[2 * root + 2]) {
 //            int temp = arr[root];
 //            arr[root] = arr[2 * root + 1];
 //            arr[2 * root + 1] = temp;
-//            heapify(arr, 2 * root + 1);
+//            heapify(arr, n, 2 * root + 1);
 //        }
+//
 //        if (arr.length > 2 * root + 2 && arr[root] < arr[2 * root + 2] && arr[2 * root + 1]<arr[2 * root + 2]) {
 //            int temp = arr[root];
 //            arr[root] = arr[2 * root + 2];
 //            arr[2 * root + 2] = temp;
-//            heapify(arr, 2 * root + 2);
+//            heapify(arr, n, 2 * root + 2);
 //        }
 
 //        xx조건의 경우에 change로직 : left와 right비교해서 자리 change
