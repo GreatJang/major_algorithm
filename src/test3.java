@@ -12,9 +12,6 @@ public class test3 {
         for(int i=0; i<node_n; i++){
             adjList.add(new ArrayList<>());
         }
-        for(int[] a : inputArr){
-            addEdge(a[0], a[1]);
-        }
 
 //        for(int i=1; i<=3; i++){ // 3==(높이길이-행의개수)
 //            for(int j=1; j<=5; j++ ){ //5==(가로길이-열의개수)
