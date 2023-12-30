@@ -1,6 +1,7 @@
 import java.lang.reflect.GenericDeclaration;
 import java.util.*;
 //프로그래머스 게임 맵 최단거리
+//BFSListGraph
 public class test2 {
     static List<List<Integer>> adjList;
     static boolean[] visited;

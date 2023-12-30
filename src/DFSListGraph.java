@@ -13,7 +13,7 @@ public class DFSListGraph {
         for(int i=0; i<node_n; i++){ // 노드 갯수만큼 반복
             adjList.add(new ArrayList<>()); // 노드의 갯수만큼 리스트 길이 생성
         }
-        for(int[] a :  inputArr){ //Enhanced for문으로 요소별로 값분리[0, 1], [0, 2], [1, 3], [2, 3], [2, 4]
+        for(int[] a :  inputArr){ // Enhanced for문으로 요소별로 값분리[0, 1], [0, 2], [1, 3], [2, 3], [2, 4]
             addEdge(a[0], a[1]); // addEdge로 값 넘김.
         }
         dfs(0);
@@ -23,7 +23,7 @@ public class DFSListGraph {
         adjList.get(b).add(a); // b자리에 a 값넣기 // 반대로 뒤집에서 넣어주느 이유는 양방향으로 설정해주어야 하기때문.
     }
 
-    static void dfs(int start){ //DFS 로직 구현
+    static void dfs(int start){ //DFS(깊이우선탐색) 로직 구현
         System.out.print(start + ", "); // 방문한 노드 출력
         visited[start] = true; // 방문한 노드는 visited를 true로 설정.
         for(int target : adjList.get(start)){ // start번째 배열의 길이만큼 for문 동작
