@@ -5,17 +5,17 @@ import java.util.List;
 import java.util.Queue;
 
 public class BFSListGraph {
-    static List<List<Integer>> adjList;
+    static List<List<Integer>> adjList; // 리스트 안에 리스트 배열 설정
     static boolean[] visited;
     static int[] distance;
 
     public static void main(String[] args) {
         int[][] inputArr = {{0, 1}, {0, 2}, {1, 3}, {2, 3}, {2, 4}};
-        int node_n = 5;
-        visited = new boolean[node_n];
-        adjList = new ArrayList<>();
-        for (int i = 0; i < node_n; i++) {
-            adjList.add(new ArrayList<>());
+        int node_n = 5; // 노드 갯수 설정
+        visited = new boolean[node_n]; // 방문한 노드visited체크를 위해 boolean으로 설정
+        adjList = new ArrayList<>(); // adjList 리스트안에 리스트 초기화
+        for (int i = 0; i < node_n; i++) { // 노드 갯수만큼 반복
+            adjList.add(new ArrayList<>()); // 노드의 갯수만큼 리스트 길이 생성
         }
         for (int[] a : inputArr) {
             addEdge(a[0], a[1]);
