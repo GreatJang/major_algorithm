@@ -38,7 +38,7 @@ public class BFSListGraph {
 //            }
 //        }
 
-        distance = new int[node_n]; // distance int배열 선언 초기화
+        distance = new int[node_n]; // distance int배열 선언 및 초기화
         int end = 3;
         int shortest = bfs(0, end); // 0에서 end까지 도달하는 최소거리 구하기
         System.out.println(shortest); // 최소거리 출력
