@@ -8,16 +8,18 @@ public class test2 {
     static int[] distance;
     public static void main(String[] args) {
         int[][] maps = {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,1},{0,0,0,0,1}};
-        int m = maps.length;
-        int n = maps[0].length;
-        visited = new boolean[m*n];
+        int m = maps.length; // 이중 배열의 길이
+        int n = maps[0].length; // 이중 배열의 한 요소의 길이
+        visited = new boolean[m*n]; // 방문한 노드는 visited를 true로 설정. // 노드 25개
         adjList = new ArrayList<>();
-        distance = new int[m*n];
-        for (int i = 0; i < m*n; i++) {
-            adjList.add(new ArrayList<>());
+        distance = new int[m*n]; // distance int배열 선언 및 초기화
+
+        for (int i = 0; i < m*n; i++) { // 노드 갯수만큼 반복
+            adjList.add(new ArrayList<>()); // 노드의 갯수만큼 리스트 길이 생성
         }
         Arrays.fill(distance,1);
 
+        // index값 기준으로 상하좌우 체크로직
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) { // 0부터시작
                 if(maps[i][j]==0) continue; // 본인이 0인자리 넘어가기
@@ -46,7 +48,6 @@ public class test2 {
 
         while (!queue.isEmpty()) { // 자주쓰이기 때문에 코드 외우기
             int next = queue.poll(); // 방문
-//            System.out.print(next + " ");
             for (int target : adjList.get(next)) { // next에 근접해 있는 숫자들을 target으로 가져옴
                 if (visited[target] != true) { // 가져온 target이 true가 아닌경우에 queue에 target을 add // true이면 queue에 추가 안됌.
                     queue.add(target); //queue에 담았을때 바로 visited 를 true로 바꿔야 한다.
